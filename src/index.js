@@ -7,6 +7,8 @@ const keccak256 = require('js-sha3').keccak_256;
 const toBN = require('number-to-bn');
 const BN = require('bn.js');
 const utils = require('ethjs-util');
+// require buffer if it isn't present
+const buf = (typeof Buffer === 'undefined') ? require('buffer') : Buffer;
 
 module.exports = Eth;
 
@@ -39,7 +41,7 @@ function Eth(cprovider, options) {
 Eth.BN = BN;
 Eth.isAddress = (val) => utils.isHexString(val, 20);
 Eth.keccak256 = (val) => `0x${keccak256(val)}`;
-Eth.Buffer = Buffer;
+Eth.Buffer = buf;
 Eth.isHexString = utils.isHexString;
 Eth.fromWei = unit.fromWei;
 Eth.toWei = unit.toWei;

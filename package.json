@@ -22,7 +22,7 @@
     "build:stats": "cross-env BABEL_ENV=commonjs NODE_ENV=production webpack --config ./internals/webpack/webpack.config.js --progress --profile --json > dist/stats.json",
     "build": "npm run build:commonjs && npm run test:lib && npm run build:umd && npm run build:umd:min",
     "lint": "npm run lint:js",
-    "lint:eslint": "eslint --ignore-path .gitignore --ignore-pattern **/**.min.js",
+    "lint:eslint": "eslint",
     "lint:js": "npm run lint:eslint -- . ",
     "lint:staged": "lint-staged",
     "test:clean": "rimraf ./coverage",
@@ -36,6 +36,7 @@
     "url": "git+ssh://git@github.com/ethjs/ethjs.git"
   },
   "dependencies": {
+    "buffer": "^5.0.6",
     "ethjs-contract": "0.1.7",
     "ethjs-filter": "0.1.5",
     "ethjs-provider-http": "0.1.3",
