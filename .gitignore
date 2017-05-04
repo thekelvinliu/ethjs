@@ -2,7 +2,6 @@
 node_modules
 dist/stats.json
 coverage
-lib
 
 # Cruft
 .DS_Store
